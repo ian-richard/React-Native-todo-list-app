@@ -1,20 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, TextInput, View, Button } from "react-native";
 
 export default function App() {
   return (
-    <View style={{ padding: 50 }}>
-      <View>
-        <TextInput
-          placeholder="Course Goal"
-          style={{ borderBottomColor: "black", borderBottomWidth: 1 }}
-        />
+   
+    <View style={styles.screen}>
+      <View style={styles.inputContainer}>
+        <TextInput placeholder="Course Goal" style={styles.input} />
         <Button title="Add" />
       </View>
-
-      <View>
-        <Text>This is a test</Text>
-      </View>
+      <View />
     </View>
+    
   );
-};
+}
+
+const styles = StyleSheet.create({
+  screen: {
+    padding: 50
+  },
+  inputContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  input: { 
+    width: "80%", 
+    borderColor: "black", 
+    borderWidth: 1, 
+    padding: 10,
+   },
+});
